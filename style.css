@@ -1,3 +1,55 @@
+.skills-section {
+  position: relative;
+  min-height: 700px;   /* 🔥 pehle 500px tha, ab zyada space milega */
+  color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;   /* padding bhi thodi badhayi */
+}
+
+.skills-content {
+  position: relative;
+  z-index: 1; /* text upar rahega */
+}
+
+/* Title */
+.section-title {
+  font-size: 3rem;    /* thoda bada title */
+  margin-bottom: 40px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+/* Grid of skill cards */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* card width bhi thodi badi */
+  gap: 25px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Individual skill card */
+.skill-card {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 30px;    /* pehle 20px tha → ab card bada lagega */
+  font-size: 1.3rem;
+  font-weight: 600;
+  backdrop-filter: blur(8px);
+  transition: transform 0.3s ease, background 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover animation */
+.skill-card:hover {
+  transform: translateY(-12px) scale(1.08);
+  background: rgba(106, 92, 205, 0.4);
+}
 /* import the font from google */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
 
@@ -772,4 +824,74 @@ footer span a:hover{
 }
 .connect{
     text-align:center;
+}
+
+#projects{
+    background: #111;
+    color: white;
+
+}
+
+#page5 {
+  padding: 60px 20px;
+ 
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+#page5-top h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+}
+
+.swiper {
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+}
+
+.swiper-slide {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.slide-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.slide-content:hover img {
+  transform: scale(1.1);
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  width: 100%;
+  padding: 20px;
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+}
+
+.slide-content:hover .overlay {
+  transform: translateY(0);
+}
+
+.overlay h3 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.overlay p {
+  margin-top: 5px;
+  font-size: 1rem;
+  opacity: 0.8;
 }
