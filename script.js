@@ -1,5 +1,5 @@
 // Typewriter effect
-const textArray = ["welcome to my portfolio", "I am an AI Developer", "I love coding", "I build web apps"];
+const textArray = ["welcome to my portfolio", "I am HARSH SUMAN","I am an AI Developer", "I love coding", "I build web apps"];
 const typingSpeed = 100; const erasingSpeed = 50; const delayBetweenWords = 1500;
 let textIndex = 0; 
 let charIndex = 0;
@@ -68,3 +68,24 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+
+// Toggle navigation menu on small screens
+
+const toggleBtn = document.getElementById("menu-toggle");
+  const navMenu = document.getElementById("nav-menu");
+
+  toggleBtn.addEventListener("click", () => {
+    navMenu.classList.toggle("hidden");
+  });
+
+ const scrollBtn = document.getElementById("scrollToTopBtn");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      scrollBtn.style.display = "block";
+    } else {
+      scrollBtn.style.display = "none";
+    }
+  });
+  
+
