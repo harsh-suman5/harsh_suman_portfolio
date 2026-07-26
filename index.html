@@ -1,726 +1,463 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="google-site-verification" content="R6hTm_8eY0X8goF0jARUXsoFNzySo6SkiFNyh7J3CHY" />
-  <title>HARSH SUMAN</title>
-  <link rel="icon" type="image/png" href="A32611.jpg" />
-
-
-  <script src="https://cdn.tailwindcss.com"></script> 
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
-  
-  <link rel="stylesheet" href="style.css">
-  <style>
-    /* Custom styles */
-    body {
-      scroll-behavior: smooth;
-      
-    }
-    /* Navbar active link underline */
-    .nav-link {
-      position: relative;
-      padding-bottom: 0.25rem;
-      cursor: pointer;
-    }
-    .nav-link.active::after {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 2px;
-      background-color: #4f46e5; /* Indigo-600 */
-      bottom: 0;
-      left: 0;
-      border-radius: 2px;
-    }
-    /* Card hover effect */
-    .card-hover {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .card-hover:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-        0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    }
-    /* Mobile menu hidden by default */
-    #mobile-menu {
-      display: none;
-    }
-    /* Show mobile menu when active */
-    #mobile-menu.active {
-      display: block;
-    }
-    img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 30px rgba(79, 70, 229, 0.2);
-    transition: transform 0.3s, box-shadow 0.3s;
-    z-index: 1;
-    position: relative;
-  }
-
-
-/* Loader wrapper covers screen */
-.loader-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  animation: fadeOut 1s ease forwards;
-  animation-delay: 3s; /* Loader stays for 3s */
-  overflow: hidden;
-}
-
-/* Circle spinner */
-.loader {
-  width: 80px;
-  height: 80px;
-  border: 6px solid #4f46e5; /* Indigo */
-  border-top: 6px solid transparent;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
-/* Welcome text fade in */
-.welcome-text {
-  margin-top: 20px;
-  font-size: 28px;
-  font-weight: bold;
-  color: #4f46e5;
-  opacity: 0;
-  animation: fadeIn 2s ease forwards;
-  animation-delay: 1s;
-}
-
-
-/* Animations */
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeOut {
-  to { opacity: 0; visibility: hidden; }
-}
- @keyframes fade-in {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  .animate-fade-in {
-    animation: fade-in 0.6s ease-out;
-  }
-  .contact-form {
-    background-color: pink;
-  }
-
-  </style>
-  
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harsh Suman | Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
 </head>
-<body class="bg-gray-50 font-sans">
-  <!-- Fullscreen Loader -->
-<div class="loader-wrapper">
-  <div class="loader"></div>
-  <h1 class="welcome-text">Welcome to my Portfolio🚀</h1>
-</div>
-
-
-  
-
-  <!-- Navbar
-  <nav
-    id="navbar"
-    class="fixed top-0 left-0 w-full bg-white shadow-md z-50"
-    role="navigation"
-  >
-    <div
-      class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center"
-    >
-      <div class="text-2xl font-bold text-indigo-600 select-none">HARSH SUMAN</div> -->
-
-      <!-- Desktop menu -->
-      <!-- <div class="hidden md:flex space-x-8">
-  <a href="#home" class="nav-link text-xl text-gray-700 hover:text-indigo-600" data-link>Home</a>
-  <a href="#about" class="nav-link text-xl text-gray-700 hover:text-indigo-600" data-link>About</a>
-  <a href="#university" class="nav-link text-xl text-gray-700 hover:text-indigo-600" data-link>University</a>
-  <a href="#skills" class="nav-link text-xl text-gray-700 hover:text-indigo-600" data-link>Skills</a>
-  <a href="#experience" class="nav-link text-xl text-gray-700 hover:text-indigo-600" data-link>Experience</a>
-  <a href="#contact" class="nav-link text-xl text-gray-700 hover:text-indigo-600" data-link>Contact</a>
-</div> -->
-      <!-- Mobile menu button -->
-      <!-- <button
-        id="mobile-menu-btn"
-        aria-label="Toggle menu"
-        aria-expanded="false"
-        class="md:hidden text-indigo-600 focus:outline-none"
-      >
-        <svg
-          id="menu-open-icon"
-          class="w-8 h-8"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16"
-          ></path>
-        </svg>
-        <svg
-          id="menu-close-icon"
-          class="w-8 h-8 hidden"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M6 18L18 6M6 6l12 12"
-          ></path>
-        </svg>
-      </button>
-    </div> -->
-
-
-    <!-- Mobile menu -->
-    <!-- <div
-      id="mobile-menu"
-      class="md:hidden bg-white shadow-lg border-t border-gray-200"
-      role="menu"
-      aria-label="Mobile menu"
-    >
-      <a href="#home" class="block px-6 py-4 border-b border-gray-200 text-gray-700 hover:text-indigo-600" data-link>Home</a>
-     
-      <a href="#about" class="block px-6 py-4 border-b border-gray-200 text-gray-700 hover:text-indigo-600" data-link>About</a>
-      
-      <a href="#university" class="block px-6 py-4 border-b border-gray-200 text-gray-700 hover:text-indigo-600" data-link>University</a>
-      <a href="#skills" class="block px-6 py-4 border-b border-gray-200 text-gray-700 hover:text-indigo-600" data-link>skills</a>
-      <a href="#experience" class="block px-6 py-4 text-gray-700 hover:text-indigo-600" data-link>experience</a>
-      <a href="#contact" class="block px-6 py-4 text-gray-700 hover:text-indigo-600">contact</a>
-     
-    </div>
-  </nav> -->
-  <!-- Navbar -->
-<!-- Navbar -->
-<header class="fixed top-0 left-0 w-full z-50 bg-white shadow-md px-6 py-4">
-  <div class="flex justify-between items-center">
-    <!-- Branding -->
-    <div class="text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 text-transparent bg-clip-text">
-      HARSH SUMAN
-    </div>
-
-    <!-- Hamburger Button (Mobile Only) -->
-    <button id="menu-toggle" class="md:hidden text-purple-600 text-3xl focus:outline-none">
-      ☰
-    </button>
-  </div>
-
-  <!-- Navigation Menu -->
-<nav id="nav-menu" class="hidden md:flex mt-4 md:mt-0">
-    <ul class="flex flex-col md:flex-row gap-4 text-sm md:text-base font-medium text-gray-800">
-      <li><a href="#home" class="hover:text-purple-600 transition">Home</a></li>
-      <li><a href="#about" class="hover:text-purple-600 transition">About</a></li>
-      
-      <li><a href="#skills" class="hover:text-purple-600 transition">Skills</a></li>
-       <li><a href="#university" class="hover:text-purple-600 transition">University</a></li>
-      <li><a href="#experience" class="hover:text-purple-600 transition">Experience</a></li>
-      <li><a href="#previous-projects" class="hover:text-purple-600 transition">Projects</a></li>
-      <li><a href="#contact" class="hover:text-purple-600 transition">Contact Us</a></li>
-    </ul>
-</nav>
-</header>
-<section id="home" class="relative h-screen flex flex-col justify-center items-center text-white text-center px-6 overflow-hidden bg-gradient-to-br from-purple-600 via-pink-500 to-red-500">
-  <!-- 🌟 Foreground Content -->
-  <div class="relative z-10">
-    <!-- Typewriter Heading -->
-    <h1 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
-      <span id="typewriter" class="border-r-4 border-white pr-2"></span>
-    </h1>
-
-    <!-- Profile Image -->
-    <img src="A32611.jpg" alt="HARSH SUMAN" class="w-48 h-48 md:w-64 md:h-64 rounded-full border-4 border-white shadow-lg mb-6 hover:scale-105 transition-transform duration-300" loading="lazy" />
-
-    <!-- Call to Action Button -->
-    <p class="text-lg md:text-xl mb-8 max-w-2xl">
-      <a href="#about">
-        <button class="bg-white text-purple-600 font-bold px-6 py-3 rounded-lg shadow-lg hover:bg-gray-100 transition-all transform hover:scale-105">
-          Learn More About Me
-        </button>
-      </a>
-    </p>
-  </div>
-</section>
-
-  <!-- About Section -->
-<section id="about" class="py-20 bg-gradient-to-r from-blue-900 via-indigo-800 to-purple-700 text-white px-6">
-  <div class="max-w-7xl mx-auto">
-    <h2 class="text-4xl font-extrabold text-center mb-16 tracking-wide">
-      👨‍💻 About Me
-    </h2>
-
-    <div class="grid gap-12 md:grid-cols-2 items-center mb-16">
-      <!-- Text Content -->
-      <div>
-        <h3 class="text-3xl font-bold mb-6 text-white animate-pulse">AI Enthusiast & Web Developer</h3>
-        <p class="text-lg leading-relaxed mb-6 text-indigo-100">
-         I am Harsh Suman. I am a passionate and dedicated compuer science student with a keen interest in Artificial Intelligence and web development. <br>
-          I love exploring new technologies and applying them to solve real-world problems. <br>
-          When I'm not coding, you can find me reading tech blogs, experimenting with new programming languages, or contributing to open-source projects. <br>
-          Presently, I am pursuing my Bachelor's degree in Artificial Intelligence & Machine Learning from Vinoba Bhave University, Hazaribag, Jharkhand. <br>
-          I am eager to connect with like-minded individuals and explore opportunities in the tech world. Feel free to reach out!
-          <br>
-          contact me at: <a href="tel:+917856934617"
-   class="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 text-white px-4 py-2 rounded-full shadow-md hover:scale-105 hover:shadow-lg transition-transform duration-300"
-   title="Call HARSH">
-  📞 <span class="font-semibold tracking-wide">+91 78569 34617</span>
-</a>
-        </p>
-        <a href="RESUME (4).pdf" download class="inline-block bg-white text-indigo-700 font-bold px-8 py-3 rounded-lg shadow-lg hover:bg-indigo-100 transition-all transform hover:scale-105">
-          📄 Download Resume
-        </a>
-      </div>
-
-      <!-- Image -->
-      <div class="text-center">
-        <img
-          src="image (2).jpg"
-          alt="HARSH SUMAN"
-          class="eclipse w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full border-4 border-white shadow-lg hover:scale-105 transition-transform duration-300"
-          loading="lazy"
-        />
-      </div>
-    </div>
-  </div>
-</section>
-<!-- Skills Section -->
-<section class="py-20 bg-gray-50" id="skills">
-  <div class="max-w-7xl mx-auto px-6">
-    <h2 class="text-4xl font-extrabold text-center text-indigo-700 mb-12">
-      🚀 My Skills
-    </h2>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-      <!-- Skill Card -->
-      <div class="bg-white rounded-xl shadow-lg p-6 hover:scale-105 transition-transform duration-300">
-        <div class="text-5xl mb-4 text-indigo-600">🐍</div>
-        <h3 class="text-xl font-semibold mb-2">Python</h3>
-        <p class="text-gray-600">Data science, automation, backend APIs, and ML workflows.</p>
-      </div>
-
-      <div class="bg-white rounded-xl shadow-lg p-6 hover:scale-105 transition-transform duration-300">
-        <div class="text-5xl mb-4 text-yellow-500">🟨</div>
-        <h3 class="text-xl font-semibold mb-2">JavaScript</h3>
-        <p class="text-gray-600">Dynamic web interfaces, UI enhancements, and full-stack logic.</p>
-      </div>
-
-      <div class="bg-white rounded-xl shadow-lg p-6 hover:scale-105 transition-transform duration-300">
-        <div class="text-5xl mb-4 text-blue-600">💻</div>
-        <h3 class="text-xl font-semibold mb-2">C++</h3>
-        <p class="text-gray-600">Robotics, embedded systems, and performance-critical modules.</p>
-      </div>
-      <div class="bg-white rounded-xl shadow-lg p-6 hover:scale-105 transition-transform duration-300">
-        <div class="text-5xl mb-4 text-blue-600">💻</div>
-        <h3 class="text-xl font-semibold mb-2">AI & ML</h3>
-        <p class="text-gray-600">AUTOMATION, CHATBOT, GPT,Etc.</p>
-      </div>
-        <div class="bg-white rounded-xl shadow-lg p-6 hover:scale-105 transition-transform duration-300">
-            <div class="text-5xl mb-4 text-green-500">🌐</div>
-            <h3 class="text-xl font-semibold mb-2">Web Development</h3>
-            <p class="text-gray-600">HTML, CSS, JavaScript, React, Tailwind CSS for responsive web design.</p>
-    </div>
-        <div class="bg-white rounded-xl shadow-lg p-6 hover:scale-105 transition-transform duration-300">
-            <div class="text-5xl mb-4 text-purple-600">📊</div>
-            <h3 class="text-xl font-semibold mb-2">Data Analysis</h3>
-            <p class="text-gray-600">Pandas, NumPy, Matplotlib for data manipulation and visualization.</p>
-        </div>
-
-  </div>
-</section>
-  
-  
-
-  <!-- university section -->
-<section id="university" class="py-20 bg-gradient-to-r from-purple-50 via-indigo-100 to-blue-50 px-6">
-  <div class="max-w-7xl mx-auto text-center">
-    <h2 class="text-4xl font-extrabold text-indigo-700 mb-4">🎓 My University</h2>
-    <p class="text-lg text-gray-600 mb-12">
-      Currently pursuing a Bachelor's degree  in Artificial Intelligence & machine learning  at the prestigious Vinoba Bhave University, HAZARIBAG, JHARKHAND. I will be graduated in 2027.
-    </p>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-      <!-- University Card -->
-      <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition-shadow duration-300">
-        <img src="Vinoba-Bhave-University-MBA-Admission-3-1.png" alt="Vinoba Bhave University" class="rounded-lg mb-4 w-full h-64 object-cover">
-        <h3 class="text-xl font-bold text-indigo-700 mb-2">🏫 Vinoba Bhave University, Hazaribag</h3>
-        <p class="text-gray-700 text-sm">
-          - Bachelor's in Artificial Intelligence & machine learning<br>
-          - Relevant Coursework: Data Structures, Algorithms, Database Management, Web Development, AI & Machine Learning<br>
-          - Activities: Leader of the Coding Club, Participated in Hackathons and Tech Fests.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-  <!-- Experience Section -->
-<section id="experience" class="py-20 bg-gradient-to-br from-indigo-50 to-white px-6">
-  <div class="max-w-4xl mx-auto text-center">
-    <h2 class="text-5xl font-extrabold text-indigo-700 mb-16 tracking-tight">
-      💼 My Experience
-        
-    </h2>
-    
-
-    <div class="grid md:grid-cols-2 gap-10">
-      <!-- Experience Card 1 -->
-      <div class="bg-white rounded-2xl shadow-lg p-8 border-t-4 border-indigo-600 hover:scale-105 transform transition duration-300">
-        <div class="flex items-center justify-between mb-4">
-          <h3 class="text-2xl font-semibold text-indigo-700">Internship at Math Coder's</h3>
-          <span class="text-sm text-gray-500">Jun 2025 – Aug 2025</span>
-        </div>
-        <ul class="text-gray-700 text-left space-y-2 mt-4 list-disc list-inside">
-          <li>🚀 Developed a robotic car using arduino.</li>
-          <li>🤝recieved voice command using Bluetooth module </li>
-         
-        </ul>
-      </div>
-
-      <!-- Experience Card 2 -->
-<div class="bg-white rounded-2xl shadow-lg p-8 border-t-4 border-indigo-600 hover:scale-105 transform transition duration-300">
-  <div class="flex items-center justify-between mb-4">
-    <h3 class="text-2xl font-semibold text-indigo-700">Cyber Crime Record Management System</h3>
-    <span class="text-sm text-gray-500">July 2025 – Aug 2025</span>
-  </div>
-  <ul class="text-gray-700 text-left space-y-2 mt-4 list-disc list-inside">
-    <li>🔐 Designed and developed a secure record management system for cyber crime cases using Python and MySQL.</li>
-  
-    
-   
-   
-  </ul>
-</div>
-      <div class="bg-white rounded-2xl shadow-lg p-8 border-t-4 border-indigo-600 hover:scale-105 transform transition duration-300">
-  <div class="flex items-center justify-between mb-4">
-    <h3 class="text-2xl font-semibold text-indigo-700">Flat price prediction</h3>
-    <span class="text-sm text-gray-500">July 2025 – Aug 2025</span>
-  </div>
-  <ul class="text-gray-700 text-left space-y-2 mt-4 list-disc list-inside">
-    <li>🔐 Designed a ML project: Flat Price Prediction Using Linear Regression.</li>
-  
-    
-   
-   
-  </ul>
-</div>
-    </div>
-  </div>
-</section>
-
-
-  
-     
-
-
-  <!-- Previous Projects Section -->
-<section id="previous-projects">
-  <div class="py-20 bg-gray-50 px-6">
-    <div class="max-w-7xl mx-auto text-center">
-      <h2 class="text-4xl font-extrabold text-indigo-700 mb-12">🛠️ Previous Projects</h2>
-
-      <!-- Swiper Container -->
-      <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-          <!-- Project Slide 1 -->
-<div class="swiper-slide p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-  <img 
-    src="WhatsApp Image 2025-08-14 at 18.02.21_5fecfa5b.jpg" 
-    alt="Cyber Crime Record Management System" 
-    class="w-full h-64 object-contain rounded-lg mb-4"
-  >
-  <h3 class="text-xl font-bold text-indigo-700 mb-2">Cyber Crime Record Management System</h3>
-  <p class="text-gray-700 text-sm mb-4">
-    Cyber Crime Record Management System Software Using Python + MySQL.
-  </p>
-  
-</div>
-
-         <!-- Project Slide 2 -->
-<div class="swiper-slide p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-  <img 
-    src="circuit_image.png" 
-    alt="VOICE CONTROL CAR PROJECT" 
-    class="w-full h-64 object-contain rounded-lg mb-4"
-  >
-  <h3 class="text-xl font-bold text-indigo-700 mb-2">Voice control car Project</h3>
-  <p class="text-gray-700 text-sm mb-4">
-  A VOICE CONTROL CAR USING ARDUINO NANO + BLUETOOTH MODULE: for voice terminal command
-  </p>
-  <a href="#" class="text-purple-600 font-semibold hover:underline">View Project</a>
-</div>
-
-<!-- Project Slide 3 -->
-<div class="swiper-slide p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-  <img 
-    src="download.png" 
-    alt="Data Visualizer Project" 
-    class="w-full h-64 object-contain rounded-lg mb-4"
-  >
-  <h3 class="text-xl font-bold text-indigo-700 mb-2">House Price Prediction.</h3>
-  <p class="text-gray-700 text-sm mb-4">
-  A house price prediction Project Using Linear regression.
-  </p>
-  <a href="https://colab.research.google.com/drive/1I0xVy5LwAy7RW2Qxw3vrX4xDm28pj80n?usp=sharing#scrollTo=6O47c2BKimjc" class="text-purple-600 font-semibold hover:underline">View Project</a>
-</div>
-</section>
-<!-- Scroll to Top Button -->
-<a id="scrollToTopBtn"
-   href="#home"
-   class="fixed bottom-6 right-6 z-50 bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 text-white p-4 rounded-full shadow-lg hover:scale-110 transition-transform duration-300"
-   title="Back to Top">
-  <span style="font-size:40px;">&#8593;</span>
-</a>
-
-<!-- Contact Section -->
-<section id="contact" class="py-20 bg-black text-white px-6">
-  <div class="max-w-6xl mx-auto text-center">
-    <h2 class="text-4xl font-extrabold mb-4 text-indigo-400">📬 Get in Touch</h2>
-    <p class="text-lg text-gray-300 mb-12">
-      Whether you have a question, a project idea, or just want to say hi — I’d love to hear from you.
-    </p>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-      <!-- Contact Form -->
-      <div class="card">
-        <h2 class="text-2xl font-bold mb-8 text-indigo-600 text-center">Request This Service</h2>
-        <form id="contactForm"
-              action="https://formspree.io/f/mzzagzyd"
-              method="POST">
-
-          <div>
-            <input type="text" id="name" name="name" required
-                   placeholder="Your full name"
-                   autocomplete="name"
-                   class="w-full px-4 py-3 rounded-md bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
-          </div>
-          <br>
-
-          <div>
-            <input type="email" id="email" name="email" required
-                   placeholder="you@example.com"
-                   autocomplete="email"
-                   class="w-full px-4 py-3 rounded-md bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
-          </div>
-          <br>
-           <div>
-            <input type="phone" id="phone" name="phone" required
-                   placeholder="Your phone number"
-                   autocomplete="email"
-                   class="w-full px-4 py-3 rounded-md bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
-          </div>
-          <br>
-
-          <div>
-            <textarea id="message" name="message" rows="5" required
-                      placeholder="Tell us about your project or questions"
-                      class="w-full px-4 py-3 rounded-md bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
-          </div>
-
-          <button type="submit"
-                  class="btn-primary w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 rounded-md transition-transform transform hover:scale-105">
-            Send Request
-          </button>
-        </form>
-
-        <!-- Success Message -->
-        <div id="form-status" class="mt-6 text-green-400 font-semibold hidden text-center">
-          ✅ Your message has been sent successfully!
-        </div>
-      </div>
-      
-
-
-    </div>
-  </div>
-</section>
-
-
-<!-- Spacer -->
-<div class="h-16 bg-black"></div>
-
-<!-- Footer Section -->
-<footer class="bg-gray-900 text-white py-8">
-  <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-    <!-- Branding -->
-    <div class="text-2xl md:text-3xl font-bold bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-transparent bg-clip-text">
-      HARSH SUMAN
-    </div>
+<body class="bg-slate-50 text-slate-800 antialiased">
 
     <!-- Navigation -->
-    <nav class="flex flex-wrap justify-center gap-5 text-sm md:text-base">
-      <a href="#home" class="text-gray-300 hover:text-white transition">Home</a>
-      <a href="#about" class="text-gray-300 hover:text-white transition">About</a>
-      <a href="#skills" class="text-gray-300 hover:text-white transition">Skills</a>
-      <a href="#previous-projects" class="text-gray-300 hover:text-white transition">Projects</a>
-      <a href="#contact" class="text-gray-300 hover:text-white transition">Contact</a>
-      <a href="#blog.html" class="text-gray-300 hover:text-white transition">More about us</a>
-    </nav>
+    <header class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 border-b border-slate-100">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold text-purple-700 tracking-wide">HARSH SUMAN</a>
+            <nav class="hidden md:flex space-x-8 font-medium text-slate-600">
+                <a href="#home" class="hover:text-purple-600 transition">Home</a>
+                <a href="#about" class="hover:text-purple-600 transition">About</a>
+                <a href="#skills" class="hover:text-purple-600 transition">Skills</a>
+                <a href="#experience" class="hover:text-purple-600 transition">Experience</a
+                <a href="#projects" class="hover:text-purple-600 transition">Projects</a>
+                <a href="#education" class="hover:text-purple-600 transition">Education</a>
+                <a href="#contact" class="hover:text-purple-600 transition">Contact</a>
+            </nav>
+        </div>
+    </header>
 
-    <!-- Social Icons -->
-    <div class="flex gap-4">
-      <a href="https://linkedin.com/in/harsh-suman2003/" target="_blank"
-         class="w-8 h-8 flex items-center justify-center bg-gray-800 rounded-full hover:bg-purple-600 transition">
-        <i class="ri-linkedin-fill text-white text-lg"></i>
-      </a>
-      <a href="https://github.com/harsh-suman5" target="_blank"
-         class="w-8 h-8 flex items-center justify-center bg-gray-800 rounded-full hover:bg-pink-500 transition">
-        <i class="ri-github-fill text-white text-lg"></i>
-      </a>
-      <a href="mailto:harshsuman15@gmail.com"
-         class="w-8 h-8 flex items-center justify-center bg-gray-800 rounded-full hover:bg-blue-500 transition">
-        <i class="ri-mail-fill text-white text-lg"></i>
-      </a>
-      <a href="tel:+917856934617"
-         class="w-8 h-8 flex items-center justify-center bg-gray-800 rounded-full hover:bg-red-500 transition">
-        <i class="ri-phone-line text-white text-lg"></i>
-      </a>
-    </div>
-  </div>
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 md:pt-40 md:pb-28 max-w-6xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <span class="text-sm font-semibold text-purple-600 bg-purple-50 px-3 py-1 rounded-full uppercase tracking-wider">Welcome to my portfolio</span>
+                <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight">
+                    Hi, I'm <span class="text-purple-700">Harsh Suman</span>
+                </h1>
+                <h2 class="text-xl font-semibold text-slate-700">AI Enthusiast & Web Developer</h2>
+                <p class="text-slate-600 leading-relaxed">
+                    Passionate computer science student specializing in Artificial Intelligence and Machine Learning. I transform ideas into innovative solutions through code and creativity.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-2">
+                    <a href="#contact" class="bg-purple-600 hover:bg-purple-700 text-white font-medium px-6 py-3 rounded-xl shadow-lg shadow-purple-200 transition flex items-center gap-2">
+                        Get In Touch <i class="fa-solid font-xs fa-arrow-right"></i>
+                    </a>
+                    <a href="#" class="bg-white border border-slate-200 hover:border-purple-300 text-purple-700 font-medium px-6 py-3 rounded-xl shadow-sm transition flex items-center gap-2">
+                        <i class="fa-solid fa-download"></i> Download Resume
+                    </a>
+                </div>
+                <div class="flex items-center gap-4 text-slate-600 pt-4">
+                    <a href="tel:+917856934617" class="hover:text-purple-600 flex items-center gap-2 text-sm font-medium">
+                        <i class="fa-solid fa-phone text-purple-600"></i> +91 78569 34617
+                    </a>
+                    <div class="flex gap-3 text-lg">
+                        <a href="#" class="p-2 bg-white rounded-lg shadow-sm border border-slate-100 hover:text-purple-600 transition"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" class="p-2 bg-white rounded-lg shadow-sm border border-slate-100 hover:text-purple-600 transition"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#" class="p-2 bg-white rounded-lg shadow-sm border border-slate-100 hover:text-purple-600 transition"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-center">
+                <div class="relative w-72 h-72 md:w-80 md:h-80">
+                    <div class="absolute inset-0 bg-purple-600 rounded-full blur-2xl opacity-20"></div>
+                   <img src="A32611.jpg" alt="HARSH SUMAN" class="w-full h-full md:w-64 md:h-64 rounded-full border-4 border-white shadow-lg mb-6  transition-transform duration-300" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Copyright -->
-  <div class="mt-6 text-center text-gray-400 text-sm  flex flex-col md:flex-row justify-center items-center gap-4">
-   <span>©️ 2025 HARSH SUMAN. All rights reserved.</span>
+    <!-- About Me Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900">About Me</h2>
+                <div class="w-12 h-1 bg-purple-600 mx-auto mt-2 rounded-full"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                <div>
+                    <img src="image (2).jpg" alt="Harsh Suman" class="rounded-2xl shadow-xl w-full max-w-md mx-auto">
+                </div>
+                <div class="space-y-4 text-slate-600 leading-relaxed">
+                    <h3 class="text-2xl font-bold text-slate-800">AI Enthusiast & Web Developer</h3>
+                    <p>
+                        I am <strong class="text-slate-900">Harsh Suman</strong>, a passionate and dedicated computer science student with a keen interest in Artificial Intelligence and web development.
+                    </p>
+                    <p>
+                        I love exploring new technologies and applying them to solve real-world problems. When I'm not coding, you can find me reading tech blogs, experimenting with new programming languages, or contributing to open-source projects.
+                    </p>
+                    <p>
+                        Presently, I am pursuing my Bachelor's degree in <em>Artificial Intelligence & Machine Learning</em> from Vinoba Bhave University, Hazaribag, Jharkhand.
+                    </p>
+                </div>
+            </div>
+            <!-- Highlight Cards -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+                    <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-code"></i></div>
+                    <h4 class="font-semibold text-slate-900 mb-2">Problem Solver</h4>
+                    <p class="text-sm text-slate-600">Love tackling complex challenges with elegant code solutions</p>
+                </div>
+                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+                    <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-robot"></i></div>
+                    <h4 class="font-semibold text-slate-900 mb-2">AI Explorer</h4>
+                    <p class="text-sm text-slate-600">Passionate about machine learning and artificial intelligence</p>
+                </div>
+                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+                    <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-book-open"></i></div>
+                    <h4 class="font-semibold text-slate-900 mb-2">Continuous Learner</h4>
+                    <p class="text-sm text-slate-600">Always exploring new technologies and frameworks</p>
+                </div>
+                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+                    <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-users"></i></div>
+                    <h4 class="font-semibold text-slate-900 mb-2">Team Player</h4>
+                    <p class="text-sm text-slate-600">Enjoy collaborating on open-source and team projects</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-   <span class="mt-2 md:mt-0">
-          Made with <span class="text-indigo-500">❤️</span> by HARSH SUMAN
-        </span>
-        
-  </div>
-  
-</footer>
-<script src="script.js"></script>
-  <!-- Landbot Chatbot Embed -->
-<!-- <script>
-  window.addEventListener('load', function () {
-    var s = document.createElement('script');
-    s.type = 'text/javascript';
-    s.async = true;
-    s.src = 'https://cdn.landbot.io/landbot-3/landbot-3.0.0.js';
-    var x = document.getElementsByTagName('script')[0];
-    x.parentNode.insertBefore(s, x);
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900">My Skills</h2>
+                <p class="text-slate-600 mt-2">A showcase of my technical expertise and proficiency across various domains</p>
+                <div class="w-12 h-1 bg-purple-600 mx-auto mt-2 rounded-full"></div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Skill Card -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 space-y-3">
+                    <div class="flex justify-between items-center">
+                        <h3 class="font-bold text-lg text-slate-900">Python</h3>
+                        <span class="text-purple-600 font-bold">85%</span>
+                    </div>
+                    <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                        <div class="bg-purple-600 h-full rounded-full" style="width: 85%"></div>
+                    </div>
+                    <p class="text-sm text-slate-600">Data science, automation, backend APIs, and ML workflows</p>
+                </div>
+                <!-- Skill Card -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 space-y-3">
+                    <div class="flex justify-between items-center">
+                        <h3 class="font-bold text-lg text-slate-900">JavaScript</h3>
+                        <span class="text-purple-600 font-bold">80%</span>
+                    </div>
+                    <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                        <div class="bg-purple-600 h-full rounded-full" style="width: 80%"></div>
+                    </div>
+                    <p class="text-sm text-slate-600">Dynamic web interfaces, UI enhancements, and full-stack logic</p>
+                </div>
+                <!-- Skill Card -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 space-y-3">
+                    <div class="flex justify-between items-center">
+                        <h3 class="font-bold text-lg text-slate-900">C++</h3>
+                        <span class="text-purple-600 font-bold">75%</span>
+                    </div>
+                    <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                        <div class="bg-purple-600 h-full rounded-full" style="width: 75%"></div>
+                    </div>
+                    <p class="text-sm text-slate-600">Robotics, embedded systems, and performance-critical modules</p>
+                </div>
+                <!-- Skill Card -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 space-y-3">
+                    <div class="flex justify-between items-center">
+                        <h3 class="font-bold text-lg text-slate-900">AI & ML</h3>
+                        <span class="text-purple-600 font-bold">80%</span>
+                    </div>
+                    <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                        <div class="bg-purple-600 h-full rounded-full" style="width: 80%"></div>
+                    </div>
+                    <p class="text-sm text-slate-600">Automation, chatbots, GPT models, and machine learning</p>
+                </div>
+                <!-- Skill Card -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 space-y-3">
+                    <div class="flex justify-between items-center">
+                        <h3 class="font-bold text-lg text-slate-900">Web Development</h3>
+                        <span class="text-purple-600 font-bold">85%</span>
+                    </div>
+                    <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                        <div class="bg-purple-600 h-full rounded-full" style="width: 85%"></div>
+                    </div>
+                    <p class="text-sm text-slate-600">HTML, CSS, JavaScript, React, Tailwind CSS for responsive design</p>
+                </div>
+                <!-- Skill Card -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 space-y-3">
+                    <div class="flex justify-between items-center">
+                        <h3 class="font-bold text-lg text-slate-900">Data Analysis</h3>
+                        <span class="text-purple-600 font-bold">78%</span>
+                    </div>
+                    <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                        <div class="bg-purple-600 h-full rounded-full" style="width: 78%"></div>
+                    </div>
+                    <p class="text-sm text-slate-600">Pandas, NumPy, Matplotlib for data manipulation and visualization</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    s.onload = function () {
-      var myLandbot = new Landbot.Livechat({
-        configUrl: 'https://landbot.online/v3/H-3118158-XYOVVJKZRGFG4MJL/index.json',
-      });
-    };
-  });
-</script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900">My Experience</h2>
+                <p class="text-slate-600 mt-2">Professional journey and key accomplishments</p>
+                <div class="w-12 h-1 bg-purple-600 mx-auto mt-2 rounded-full"></div>
+            </div>
+            <div class="space-y-8">
+                <!-- Item 1 -->
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 relative pl-8 border-l-4 border-l-purple-600">
+                    <div class="flex flex-wrap justify-between items-baseline mb-2">
+                        <h3 class="text-xl font-bold text-slate-900">Robotics Intern</h3>
+                        <span class="text-xs font-semibold px-3 py-1 bg-purple-100 text-purple-700 rounded-full">Jun 2025 – Aug 2025 | Remote</span>
+                    </div>
+                    <h4 class="text-sm font-medium text-slate-500 mb-4">Math Coders</h4>
+                    <ul class="list-disc list-inside text-slate-600 text-sm space-y-1 mb-4">
+                        <li>Developed a robotic car using Arduino microcontroller</li>
+                        <li>Implemented voice command functionality using Bluetooth module</li>
+                        <li>Designed and tested circuit integration for seamless operation</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs bg-white px-2.5 py-1 rounded-md border border-slate-200 text-slate-600">Arduino</span>
+                        <span class="text-xs bg-white px-2.5 py-1 rounded-md border border-slate-200 text-slate-600">Robotics</span>
+                        <span class="text-xs bg-white px-2.5 py-1 rounded-md border border-slate-200 text-slate-600">Bluetooth</span>
+                        <span class="text-xs bg-white px-2.5 py-1 rounded-md border border-slate-200 text-slate-600">IoT</span>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 relative pl-8 border-l-4 border-l-purple-600">
+                    <div class="flex flex-wrap justify-between items-baseline mb-2">
+                        <h3 class="text-xl font-bold text-slate-900">Software Developer</h3>
+                        <span class="text-xs font-semibold px-3 py-1 bg-purple-100 text-purple-700 rounded-full">July 2025 – Aug 2025 | Project</span>
+                    </div>
+                    <h4 class="text-sm font-medium text-slate-500 mb-4">Cyber Crime Record Management System</h4>
+                    <ul class="list-disc list-inside text-slate-600 text-sm space-y-1 mb-4">
+                        <li>Designed and developed a secure record management system for cyber crime cases</li>
+                        <li>Built using Python and MySQL with robust security features</li>
+                        <li>Implemented user authentication and data encryption</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs bg-white px-2.5 py-1 rounded-md border border-slate-200 text-slate-600">Python</span>
+                        <span class="text-xs bg-white px-2.5 py-1 rounded-md border border-slate-200 text-slate-600">MySQL</span>
+                        <span class="text-xs bg-white px-2.5 py-1 rounded-md border border-slate-200 text-slate-600">Security</span>
+                        <span class="text-xs bg-white px-2.5 py-1 rounded-md border border-slate-200 text-slate-600">Database</span>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 relative pl-8 border-l-4 border-l-purple-600">
+                    <div class="flex flex-wrap justify-between items-baseline mb-2">
+                        <h3 class="text-xl font-bold text-slate-900">ML Engineer</h3>
+                        <span class="text-xs font-semibold px-3 py-1 bg-purple-100 text-purple-700 rounded-full">July 2025 – Aug 2025 | Academic Project</span>
+                    </div>
+                    <h4 class="text-sm font-medium text-slate-500 mb-4">Flat Price Prediction Project</h4>
+                    <ul class="list-disc list-inside text-slate-600 text-sm space-y-1 mb-4">
+                        <li>Designed ML project for flat price prediction using Linear Regression</li>
+                        <li>Performed data analysis and feature engineering</li>
+                        <li>Achieved high accuracy in price predictions</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs bg-white px-2.5 py-1 rounded-md border border-slate-200 text-slate-600">Machine Learning</span>
+                        <span class="text-xs bg-white px-2.5 py-1 rounded-md border border-slate-200 text-slate-600">Python</span>
+                        <span class="text-xs bg-white px-2.5 py-1 rounded-md border border-slate-200 text-slate-600">Linear Regression</span>
+                        <span class="text-xs bg-white px-2.5 py-1 rounded-md border border-slate-200 text-slate-600">Data Analysis</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  VANTA.NET({
-    el: "#skills",   // ✅ effect only on skills section
-    mouseControls: true,
-    touchControls: true,
-    gyroControls: false,
-    minHeight: 200.00,
-    minWidth: 200.00,
-    scale: 1.00,
-    scaleMobile: 1.00,
-    color: 0x6a5acd,
-    backgroundColor: 0x0d1117
-  });
-});
-</script>
-<!-- Three.js + Vanta.js -->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900">Featured Projects</h2>
+                <p class="text-slate-600 mt-2">Showcasing my best work and innovative solutions</p>
+                <div class="w-12 h-1 bg-purple-600 mx-auto mt-2 rounded-full"></div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 flex flex-col">
+                    <img src="WhatsApp Image 2025-08-14 at 18.02.21_5fecfa5b.jpg" alt="Cyber Crime System" class="w-full h-48 object-cover">
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="font-bold text-xl text-slate-900 mb-2">Cyber Crime Record Management System</h3>
+                            <p class="text-slate-600 text-sm">A comprehensive software solution for managing cyber crime records with secure authentication, data encryption, and efficient case tracking.</p>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-xs bg-purple-50 text-purple-600 font-medium px-2 py-1 rounded">Python</span>
+                                <span class="text-xs bg-purple-50 text-purple-600 font-medium px-2 py-1 rounded">MySQL</span>
+                                <span class="text-xs bg-purple-50 text-purple-600 font-medium px-2 py-1 rounded">Security</span>
+                            </div>
+                            <div class="flex gap-4 pt-2">
+                                <a href="#" class="text-sm font-semibold text-purple-600 hover:text-purple-700 flex items-center gap-1"><i class="fa-brands fa-github"></i> Code</a>
+                                <a href="#" class="text-sm font-semibold text-purple-600 hover:text-purple-700 flex items-center gap-1"><i class="fa-solid fa-arrow-up-right-from-square"></i> View</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 flex flex-col">
+                    <img src="circuit_image.png" alt="Voice Control Car Project" class="w-full h-48 object-cover">
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="font-bold text-xl text-slate-900 mb-2">Voice Control Car Project</h3>
+                            <p class="text-slate-600 text-sm">An innovative IoT project featuring a voice-controlled car using Arduino Nano and Bluetooth module. Accepts voice terminal commands for seamless navigation.</p>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-xs bg-purple-50 text-purple-600 font-medium px-2 py-1 rounded">Arduino</span>
+                                <span class="text-xs bg-purple-50 text-purple-600 font-medium px-2 py-1 rounded">Bluetooth</span>
+                                <span class="text-xs bg-purple-50 text-purple-600 font-medium px-2 py-1 rounded">IoT</span>
+                            </div>
+                            <div class="flex gap-4 pt-2">
+                                <a href="#" class="text-sm font-semibold text-purple-600 hover:text-purple-700 flex items-center gap-1"><i class="fa-brands fa-github"></i> Code</a>
+                                <a href="#" class="text-sm font-semibold text-purple-600 hover:text-purple-700 flex items-center gap-1"><i class="fa-solid fa-arrow-up-right-from-square"></i> View</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 flex flex-col">
+                    <img src="download.png" alt="House Price Prediction" class="w-full h-48 object-cover">
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="font-bold text-xl text-slate-900 mb-2">House Price Prediction</h3>
+                            <p class="text-slate-600 text-sm">Machine learning project that predicts house prices using Linear Regression algorithm. Features data preprocessing, feature engineering, and model evaluation.</p>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-xs bg-purple-50 text-purple-600 font-medium px-2 py-1 rounded">Python</span>
+                                <span class="text-xs bg-purple-50 text-purple-600 font-medium px-2 py-1 rounded">Machine Learning</span>
+                                <span class="text-xs bg-purple-50 text-purple-600 font-medium px-2 py-1 rounded">Data Science</span>
+                            </div>
+                            <div class="flex gap-4 pt-2">
+                                <a href="#" class="text-sm font-semibold text-purple-600 hover:text-purple-700 flex items-center gap-1"><i class="fa-brands fa-github"></i> Code</a>
+                                <a href="#" class="text-sm font-semibold text-purple-600 hover:text-purple-700 flex items-center gap-1"><i class="fa-solid fa-arrow-up-right-from-square"></i> View</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<script>
-var setVantaHome = () => {
-  if (window.VANTA) window.VANTA.WAVES({
-    el: "#home",   //  sirf home section pe chalega
-    mouseControls: true,
-    touchControls: true,
-    gyroControls: false,
-    minHeight: 400.00,   // home ke liye area thoda bada
-    minWidth: 400.00,
-    highlightColor: 0xff6f61, // fog ka accent color (aap change kar sakte ho)
-    midtoneColor: 0x6a5acd,   // purple touch
-    lowlightColor: 0x000000,
-    baseColor: 0x111111,
-    blurFactor: 0.7,
-    speed: 1.20
-  })
-}
+    <!-- Education Section -->
+    <section id="education" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900">My Education</h2>
+                <p class="text-slate-600 mt-2">Academic background and achievements</p>
+                <div class="w-12 h-1 bg-purple-600 mx-auto mt-2 rounded-full"></div>
+            </div>
+            <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 flex flex-col md:flex-row gap-6 items-start">
+                <img src= "Vinoba-Bhave-University-MBA-Admission-3-1.png" alt="Vinoba Bhave University" class="w-50 h-50 rounded-xl object-cover bg-white p-2 border border-slate-200">
+                <div class="space-y-4 flex-1">
+                    <div>
+                        <h3 class="text-2xl font-bold text-slate-900">Vinoba Bhave University</h3>
+                        <p class="text-purple-600 font-semibold">Bachelor's in Artificial Intelligence & Machine Learning</p>
+                        <p class="text-xs text-slate-500 mt-1"><i class="fa-solid fa-calendar text-purple-500"></i> Expected Graduation: 2027 | Hazaribag, Jharkhand</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-slate-800 mb-2">Relevant Coursework</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-white px-3 py-1 rounded-full border border-slate-200 text-slate-600">Data Structures</span>
+                            <span class="text-xs bg-white px-3 py-1 rounded-full border border-slate-200 text-slate-600">Algorithms</span>
+                            <span class="text-xs bg-white px-3 py-1 rounded-full border border-slate-200 text-slate-600">Database Management</span>
+                            <span class="text-xs bg-white px-3 py-1 rounded-full border border-slate-200 text-slate-600">Web Development</span>
+                            <span class="text-xs bg-white px-3 py-1 rounded-full border border-slate-200 text-slate-600">AI & Machine Learning</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-slate-800 mb-2">Activities & Leadership</h4>
+                        <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
+                            <li>Leader of the Coding Club</li>
+                            <li>Participated in Hackathons and Tech Fests</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-document.addEventListener("DOMContentLoaded", setVantaHome)
-</script> -->
-<!-- Swiper CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900">Get In Touch</h2>
+                <p class="text-slate-600 mt-2">Have a question or want to work together? Feel free to reach out!</p>
+                <div class="w-12 h-1 bg-purple-600 mx-auto mt-2 rounded-full"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Info -->
+                <div class="space-y-6">
+                    <h3 class="text-xl font-bold text-slate-900">Contact Information</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4 p-4 bg-white rounded-xl border border-slate-100 shadow-sm">
+                            <div class="w-10 h-10 bg-purple-100 text-purple-600 rounded-lg flex items-center justify-center"><i class="fa-solid fa-envelope"></i></div>
+                            <div>
+                                <p class="text-xs text-slate-400">Email</p>
+                                <a href="mailto:harsh@example.com" class="font-medium text-slate-800 hover:text-purple-600">harsh@example.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 p-4 bg-white rounded-xl border border-slate-100 shadow-sm">
+                            <div class="w-10 h-10 bg-purple-100 text-purple-600 rounded-lg flex items-center justify-center"><i class="fa-solid fa-phone"></i></div>
+                            <div>
+                                <p class="text-xs text-slate-400">Phone</p>
+                                <a href="tel:+917856934617" class="font-medium text-slate-800 hover:text-purple-600">+91 78569 34617</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 p-4 bg-white rounded-xl border border-slate-100 shadow-sm">
+                            <div class="w-10 h-10 bg-purple-100 text-purple-600 rounded-lg flex items-center justify-center"><i class="fa-solid fa-location-dot"></i></div>
+                            <div>
+                                <p class="text-xs text-slate-400">Location</p>
+                                <p class="font-medium text-slate-800">Hazaribag, Jharkhand</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-slate-900 mb-3">Follow Me</h4>
+                        <div class="flex gap-3">
+                            <a href="#" class="w-10 h-10 bg-white rounded-lg border border-slate-200 flex items-center justify-center text-slate-600 hover:text-purple-600 hover:border-purple-300 transition"><i class="fa-brands fa-github"></i></a>
+                            <a href="#" class="w-10 h-10 bg-white rounded-lg border border-slate-200 flex items-center justify-center text-slate-600 hover:text-purple-600 hover:border-purple-300 transition"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="#" class="w-10 h-10 bg-white rounded-lg border border-slate-200 flex items-center justify-center text-slate-600 hover:text-purple-600 hover:border-purple-300 transition"><i class="fa-solid fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Form -->
+                <form id="contactForm" action="https://formspree.io/f/mzzagzyd" method="POST" class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 space-y-4">
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Send me a message</h3>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">Your Name *</label>
+                        <input type="text" name="name" placeholder="John Doe" class="w-full px-4 py-2.5 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent transition" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">Your Email *</label>
+                        <input type="email" name="email" placeholder="john@example.com" class="w-full px-4 py-2.5 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent transition" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">Your Message *</label>
+                        <textarea name="message" rows="4" placeholder="Tell me about your project..." class="w-full px-4 py-2.5 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent transition" required></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-purple-600 hover:bg-purple-700 text-white font-medium py-3 rounded-xl transition shadow-lg shadow-purple-200">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
 
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-100 py-8 text-center text-slate-500 text-sm">
+        <p>Made with <i class="fa-solid fa-heart text-purple-600"></i> by <span class="font-semibold text-slate-800">Harsh Suman</span></p>
+        <p class="mt-1">© 2026 All rights reserved.</p>
+    </footer>
 
-<script>
-  var swiper = new Swiper(".mySwiper", {
-    loop: true,
-    autoplay: {
-      delay: 3500,
-      disableOnInteraction: false,
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    effect: "slide", // You can change to 'fade' or 'coverflow' for more flair
-    speed: 800,
-  });
-</script>
- </body>
+    <script src="script.js"></script>
+</body>
 </html>
-
-
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
