@@ -25,31 +25,48 @@ document.addEventListener("DOMContentLoaded", () => { setTimeout(type, delayBetw
   
 });
 // Form submission handling
-document.getElementById('contactForm').addEventListener('submit', async function (e) {
-  e.preventDefault();
-  const form = e.target;
-  const data = new FormData(form);
+document.addEventListener('DOMContentLoaded', () => {
+  const contactForm = document.getElementById('contactForm');
 
-  // Optionally, show a loading state here
+  if (!contactForm) return;
 
-  try {
-    const response = await fetch(form.action, {
-      method: 'POST',
-      body: data,
-      headers: {
-        'Accept': 'application/json'
+  contactForm.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const form = e.target;
+    const data = {
+      name: form.name.value.trim(),
+      email: form.email.value.trim(),
+      message: form.message.value.trim()
+    };
+
+    if (!data.name || !data.email || !data.message) {
+      alert('Please fill in all required fields.');
+      return;
+    }
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
+
+      if (response.ok) {
+        alert('Thank you! Your message has been sent.');
+        form.reset();
+      } else {
+        const errorText = await response.text();
+        console.error('Formspree error:', errorText);
+        alert('There was a problem submitting your request. Please try again.');
       }
-    });
-
-    if (response.ok) {
-      alert('Thank you! Your request has been sent to the admin.');
-      form.reset();
-    } else {
+    } catch (error) {
+      console.error(error);
       alert('There was a problem submitting your request. Please try again.');
     }
-  } catch (error) {
-    alert('There was a problem submitting your request. Please try again.');
-  }
+  });
 });
 
 // Mobile menu handler
