@@ -12,6 +12,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
+        #mobile-menu { display: none; }
+        @media (max-width: 767px) {
+            #mobile-menu.open { display: block; }
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased">
@@ -34,10 +38,11 @@
                 <a href="#projects" class="hover:text-purple-600 transition">Projects</a>
                 <a href="#education" class="hover:text-purple-600 transition">Education</a>
                 <a href="#contact" class="hover:text-purple-600 transition">Contact</a>
+                <a href="login.html" class=" hover:bg-pink-500 text-purple font-bold  px-4  rounded ">Login/signup</a>
             </nav>
         </div>
 
-        <div id="mobile-menu" class="hidden md:hidden border-t border-slate-100 bg-white/95 backdrop-blur-md">
+        <div id="mobile-menu" class="md:hidden border-t border-slate-100 bg-white/95 backdrop-blur-md">
             <div class="max-w-6xl mx-auto px-6 py-4 space-y-3">
                 <a href="#home" class="block py-2 text-slate-700 hover:text-purple-600 transition">Home</a>
                 <a href="#about" class="block py-2 text-slate-700 hover:text-purple-600 transition">About</a>
@@ -46,6 +51,7 @@
                 <a href="#projects" class="block py-2 text-slate-700 hover:text-purple-600 transition">Projects</a>
                 <a href="#education" class="block py-2 text-slate-700 hover:text-purple-600 transition">Education</a>
                 <a href="#contact" class="block py-2 text-slate-700 hover:text-purple-600 transition">Contact</a>
+                <a href="login.html" class="block py-2 text-slate-700 hover:text-purple-600 transition">login/signup</a>
             </div>
         </div>
     </header>
@@ -471,10 +477,17 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-white border-t border-slate-100 py-8 text-center text-slate-500 text-sm">
+    <footer class="bg-pink-300 border-t border-slate-100 py-8 text-center text-slate-500 text-sm">
         <p>Made with <i class="fa-solid fa-heart text-purple-600"></i> by <span class="font-semibold text-slate-800">Harsh Suman</span></p>
         <p class="mt-1">© 2026 All rights reserved.</p>
+         <div class="flex flex-col item-center  border-slate-100 py-8 text-center text-slate-500 text-sm gap-2">
+        <h1 class="font-semibold text-slate-700">Important Links</h1>
+        <a href="mailto:harshsuman15@gmail.com" class="hover:text-purple-600 transition">✉️ Email US</a>
+        <a href="projects.html" class="hover:text-purple-600 transition">View more projects</a>
+    </div> 
     </footer>
+   
+        <!-- important links -->
 
     <script src="script.js"></script>
 </body>
