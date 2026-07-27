@@ -79,7 +79,8 @@ document.addEventListener('DOMContentLoaded', function () {
   if (!menuBtn || !mobileMenu || !menuOpenIcon || !menuCloseIcon) return;
 
   menuBtn.addEventListener('click', () => {
-    const isOpen = mobileMenu.classList.toggle('open');
+    const isOpen = mobileMenu.classList.toggle('active');
+    mobileMenu.style.display = isOpen ? 'block' : 'none';
     menuOpenIcon.classList.toggle('hidden', isOpen);
     menuCloseIcon.classList.toggle('hidden', !isOpen);
     menuBtn.setAttribute('aria-expanded', String(isOpen));
@@ -87,7 +88,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   mobileMenu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
-      mobileMenu.classList.remove('open');
+      mobileMenu.classList.remove('active');
+      mobileMenu.style.display = 'none';
       menuOpenIcon.classList.remove('hidden');
       menuCloseIcon.classList.add('hidden');
       menuBtn.setAttribute('aria-expanded', 'false');
