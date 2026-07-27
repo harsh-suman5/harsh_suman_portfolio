@@ -76,33 +76,31 @@ document.addEventListener('DOMContentLoaded', function () {
   const menuOpenIcon = document.getElementById('menu-open-icon');
   const menuCloseIcon = document.getElementById('menu-close-icon');
 
-  if (menuBtn && mobileMenu && menuOpenIcon && menuCloseIcon) {
-    menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('active');
-      menuOpenIcon.classList.toggle('hidden');
-      menuCloseIcon.classList.toggle('hidden');
-      menuBtn.setAttribute('aria-expanded', mobileMenu.classList.contains('active'));
+  if (!menuBtn || !mobileMenu || !menuOpenIcon || !menuCloseIcon) return;
+
+  menuBtn.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    menuOpenIcon.classList.toggle('hidden', isOpen);
+    menuCloseIcon.classList.toggle('hidden', !isOpen);
+    menuBtn.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      menuOpenIcon.classList.remove('hidden');
+      menuCloseIcon.classList.add('hidden');
+      menuBtn.setAttribute('aria-expanded', 'false');
     });
-  }
+  });
 });
 
-// Toggle navigation menu on small screens
+// Optional scroll button behavior, if present
+const scrollBtn = document.getElementById('scrollToTopBtn');
 
-const toggleBtn = document.getElementById("menu-toggle");
-  const navMenu = document.getElementById("nav-menu");
-
-  toggleBtn.addEventListener("click", () => {
-    navMenu.classList.toggle("hidden");
+if (scrollBtn) {
+  window.addEventListener('scroll', () => {
+    scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
   });
-
- const scrollBtn = document.getElementById("scrollToTopBtn");
-
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) {
-      scrollBtn.style.display = "block";
-    } else {
-      scrollBtn.style.display = "none";
-    }
-  });
-  
+}
 
